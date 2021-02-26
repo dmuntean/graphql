@@ -246,7 +246,7 @@ func UseMultipartForm() ClientOption {
 	}
 }
 
-//ImmediatelyCloseReqBody will close the req body immediately after each request body is ready
+// ImmediatelyCloseReqBody will close the req body immediately after each request body is ready
 func ImmediatelyCloseReqBody() ClientOption {
 	return func(client *Client) {
 		client.closeReq = true
@@ -268,7 +268,7 @@ func (ee Errors) Error() string {
 	for i, e := range ee {
 		errs[i] = e.Message
 	}
-	return "graphql: " + strings.Join(errs, "; ")
+	return strings.Join(errs, "; ")
 }
 
 // An Error contains error information returned by the GraphQL server.
